@@ -1,0 +1,13 @@
+dependencies {
+    implementation "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
+    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-toml:$jacksonVersion"
+    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-properties:$jacksonVersion"
+    compileOnly "org.springframework.boot:spring-boot:$springBootVersion"
+    implementation "org.springframework.integration:spring-integration-core:$springVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+}
+
+test {
+    useJUnitPlatform()
+}

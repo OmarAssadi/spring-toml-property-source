@@ -1,0 +1,4 @@
+topLevelKey = "top level value"
+
+[table]
+tableKey = "table value"

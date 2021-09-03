@@ -1,0 +1,35 @@
+[server]
+port = 8085
+
+[appConfig]
+websiteName = "Spring TOML Demo"
+baseUrl = "https://localhost/"
+locale = "en-US"
+modules = [
+    "game",
+    "forum"
+]
+
+[[appConfig.databases]]
+address = "localhost"
+database = "forum_db"
+username = "forum_user"
+password = "123456"
+port = 3306
+
+[appConfig.databases.attributes]
+useSSL = true
+serverTimezone = "GMT"
+testAttrib = 4151
+
+[[appConfig.databases]]
+address = "127.0.0.1"
+database = "game_db"
+username = "game_user"
+password = "hunter2"
+port = 43594
+
+[appConfig.databases.attributes]
+useSSL = false
+serverTimezone = "UTC"
+mode = 1

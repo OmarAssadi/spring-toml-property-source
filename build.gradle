@@ -1,0 +1,17 @@
+ext {
+    springBootVersion = '2.5.4'
+    springVersion = '5.5.3'
+    jacksonVersion = '2.13.0-rc1'
+    junitVersion = '5.7.0'
+}
+
+allprojects {
+    apply plugin: 'java'
+
+    group 'com.omarassadi'
+    version '1.0.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+}

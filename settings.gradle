@@ -1,0 +1,4 @@
+rootProject.name = 'toml-property-source-loader'
+
+include(":spring-toml-property-source")
+include(":spring-toml-property-source-example")

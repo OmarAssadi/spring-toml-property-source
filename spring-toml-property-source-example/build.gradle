@@ -1,0 +1,18 @@
+ext {
+    lombokVersion = '1.18.20'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+dependencies {
+    implementation project(":spring-toml-property-source")
+    implementation "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
+    implementation "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    testImplementation "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    testCompileOnly "org.projectlombok:lombok:$lombokVersion"
+}
