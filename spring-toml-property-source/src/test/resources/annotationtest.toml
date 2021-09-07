@@ -1,0 +1,16 @@
+topLevelKey = "top level value"
+2ndTopLevelKey = "2nd top level value"
+
+[table]
+tableKey = "table value"
+emptyList = [
+]
+listWithItems = [
+    "string Item",
+    123,
+    false
+]
+
+[table.map]
+mapKey = "map value"
+secondMapKey = "2nd map value"

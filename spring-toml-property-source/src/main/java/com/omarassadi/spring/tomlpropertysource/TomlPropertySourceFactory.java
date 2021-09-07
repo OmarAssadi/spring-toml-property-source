@@ -25,10 +25,6 @@ public final class TomlPropertySourceFactory implements PropertySourceFactory {
             throw new IllegalStateException(
                 "Attempted to load " + name + " but jackson-dataformat-toml was not found on the classpath");
         }
-        if (!ClassUtils.isPresent("com.fasterxml.jackson.core.io.ContentReference", null)) {
-            throw new IllegalStateException(
-                "Attempted to load " + name + " but jackson-core was either not found on the classpath or below version 2.13.0");
-        }
         final ObjectMapper mapper = new ObjectMapper(new TomlFactory());
         final Message<JsonNode> message = new GenericMessage<>(mapper.readTree(resource.getInputStream()));
         final ObjectToMapTransformer transformer = new ObjectToMapTransformer();

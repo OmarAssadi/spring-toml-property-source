@@ -1,18 +1,11 @@
 package com.omarassadi.spring.tomlpropertysource;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.springframework.boot.context.properties.ConstructorBinding;
 
 import java.util.Map;
 
-@Data
-@NoArgsConstructor
-public final class DatabaseConfig {
+@ConstructorBinding
+public record DatabaseConfig(String address, String database, String username, String password, int port,
+                             Map<String, Object> attributes) {
 
-    private String address;
-    private String database;
-    private String username;
-    private String password;
-    private int port;
-    private Map<String, Object> attributes;
 }

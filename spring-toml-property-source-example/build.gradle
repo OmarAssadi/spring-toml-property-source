@@ -2,17 +2,24 @@ ext {
     lombokVersion = '1.18.20'
 }
 
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16
 
 dependencies {
     implementation project(":spring-toml-property-source")
-    implementation "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
-    implementation "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
-    testImplementation "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+    implementation "org.springframework.boot:spring-boot-starter-web"
     compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testImplementation "org.springframework.boot:spring-boot-starter-webflux"
+    testImplementation 'uk.co.datumedge:hamcrest-json:0.2'
     testCompileOnly "org.projectlombok:lombok:$lombokVersion"
+    testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+}
+
+test {
+    useJUnitPlatform()
 }
