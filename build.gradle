@@ -3,12 +3,14 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
-group 'com.omarassadi'
-version '1.0.0-SNAPSHOT'
-
 ext {
     jacksonVersion = '2.12.4'
     junitVersion = '5.7.0'
+}
+
+allprojects {
+    group 'com.omarassadi'
+    version '1.0.0-SNAPSHOT'
 }
 
 subprojects {
@@ -19,4 +21,20 @@ subprojects {
     repositories {
         mavenCentral()
     }
+
+    java {
+        withJavadocJar()
+        withSourcesJar()
+    }
+
+    jar {
+        enabled = true
+        archiveClassifier.set("")
+    }
+
+    artifacts {
+        archives javadocJar, sourcesJar
+    }
 }
+
+

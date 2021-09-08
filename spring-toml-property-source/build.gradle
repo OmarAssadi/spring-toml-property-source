@@ -1,3 +1,8 @@
+plugins {
+    id 'maven-publish'
+    id 'signing'
+}
+
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
@@ -13,4 +18,48 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            pom {
+                name = 'spring-toml-property-source'
+                description = 'A Spring library for loading TOML configurations.'
+                url = 'https://github.com/OmarAssadi/spring-toml-property-source'
+                licenses {
+                    license {
+                        name = 'ISC License'
+                        url = 'https://opensource.org/licenses/ISC'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'omar'
+                        name = 'Omar Assadi'
+                        email = 'omar@assadi.co.il'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/OmarAssadi/spring-toml-property-source.git'
+                    developerConnection = 'scm:git:ssh://github.com/OmarAssadi/spring-toml-property-source.git'
+                    url = 'https://github.com/OmarAssadi/spring-toml-property-source'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            def releasesRepoUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+            def snapshotsRepoUrl = 'https://oss.sonatype.org/content/repositories/snapshots/'
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            allowInsecureProtocol=true
+            credentials(PasswordCredentials)
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
 }
