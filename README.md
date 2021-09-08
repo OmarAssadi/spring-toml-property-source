@@ -7,7 +7,10 @@ This project adds support for TOML in Spring Boot configs.
 
 ## Usage
 
-1. Add the library as a dependency. I plan to clean this up a bit and publish it to Maven Central soon.
+1. Add the library as a dependency.
+```groovy
+implementation 'com.omarassadi:spring-toml-property-source:1.0.0'
+```
 2. Create a file in `META-INF/` called `spring.factories` and add the following:
 
 ```properties
