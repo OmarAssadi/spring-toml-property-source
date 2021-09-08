@@ -1,9 +1,15 @@
-ext {
-    lombokVersion = '1.18.20'
+plugins {
+    id 'application'
 }
 
 sourceCompatibility = JavaVersion.VERSION_16
 targetCompatibility = JavaVersion.VERSION_16
+
+mainClassName = 'com.omarassadi.spring.tomlpropertysource.TomlDemoApplication'
+
+ext {
+    lombokVersion = '1.18.20'
+}
 
 dependencies {
     implementation project(":spring-toml-property-source")

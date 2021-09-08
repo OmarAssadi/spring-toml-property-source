@@ -20,6 +20,10 @@ test {
     useJUnitPlatform()
 }
 
+bootJar {
+    enabled = false
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -30,8 +34,8 @@ publishing {
                 url = 'https://github.com/OmarAssadi/spring-toml-property-source'
                 licenses {
                     license {
-                        name = 'ISC License'
-                        url = 'https://opensource.org/licenses/ISC'
+                        name = 'Apache License, Version 2.0'
+                        url = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
                     }
                 }
                 developers {

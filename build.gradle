@@ -1,6 +1,34 @@
 plugins {
-    id 'org.springframework.boot' version '2.5.4'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'org.springframework.boot' version '2.5.4' apply(false)
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE' apply(false)
+    id 'com.diffplug.spotless' version '5.15.0' apply(false)
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'com.diffplug.spotless'
+
+    group 'com.omarassadi'
+    version '1.0.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+
+    spotless {
+        format 'text', {
+            target '*.java', '*.gradle', '*.toml', '*.md'
+            trimTrailingWhitespace()
+            indentWithSpaces(4)
+            endWithNewline()
+        }
+        groovyGradle {
+            target '*.gradle', 'gradle/*.gradle'
+        }
+        java {
+            licenseHeaderFile file(rootProject.projectDir.toString() + '/license.header.spotless')
+        }
+    }
 }
 
 ext {
@@ -8,19 +36,9 @@ ext {
     junitVersion = '5.7.0'
 }
 
-allprojects {
-    group 'com.omarassadi'
-    version '1.0.0-SNAPSHOT'
-}
-
 subprojects {
-    apply plugin: 'java'
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
-
-    repositories {
-        mavenCentral()
-    }
 
     java {
         withJavadocJar()
@@ -36,5 +54,3 @@ subprojects {
         archives javadocJar, sourcesJar
     }
 }
-
-
