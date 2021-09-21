@@ -1,3 +1,7 @@
+<p style="text-align: center;">
+  <a href="README.md">View the English version of this document</a>
+</p>
+
 # Spring TOML Property Source
 
 Spring TOML Property Source 会增加对你的 Spring Boot 项目中 TOML 配置文件加载的支持。

@@ -1,3 +1,7 @@
+<p style="text-align: center;">
+  <a href="README_zh.md">中文版请阅此处</a>
+</p>
+
 # Spring TOML Property Source
 
 Spring TOML Property Source adds support loading TOML-based configuration files in your
