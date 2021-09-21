@@ -8,8 +8,8 @@ Spring TOML Property Source 会增加对你的 Spring Boot 项目中 TOML 配置
 
 这个项目分为两部分：
 
-* [spring-toml-property-source]() 包含了该库本身
-* [spring-toml-property-source-example]() 包含了一个测试该库使用的 Spring 项目
+* [spring-toml-property-source](spring-toml-property-source) 包含了该库本身
+* [spring-toml-property-source-example](spring-toml-property-source-example) 包含了一个测试该库使用的 Spring 项目
 
 ## 应用
 

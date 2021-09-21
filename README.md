@@ -9,8 +9,8 @@ Spring Boot applications.
 
 This project is divided up into two parts:
 
-* [spring-toml-property-source]() contains the library itself
-* [spring-toml-property-source-example]() contains a demo Spring application that 
+* [spring-toml-property-source](spring-toml-property-source) contains the library itself
+* [spring-toml-property-source-example](spring-toml-property-source-example) contains a demo Spring application that 
 makes use of the library
 
 ## Usage
